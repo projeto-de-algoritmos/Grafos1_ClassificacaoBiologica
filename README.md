@@ -8,7 +8,7 @@
 |Matrícula | Aluno |
 | -- | -- |
 | 18/0103580  |  Jonathan Jorge Barbosa Oliveira |
-| 18/0100726  |  Felipe Campos Guimarães|
+| 18/0100726 | Filipe Campos Guimarães
 
 ## Sobre 
 Descreva os objetivos do seu projeto e como ele funciona. 
