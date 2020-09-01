@@ -63,19 +63,6 @@
 "Annona glabra";"Plantae";"Magnoliophyta";"Magnoliopsida";"Magnoliales";"Annonaceae";"Terrestrial";
 "Annona squamosa";"Plantae";"Magnoliophyta";"Magnoliopsida";"Magnoliales";"Annonaceae";"Terrestrial";
 "Anolis aeneus";"Animalia";"Chordata";"Reptilia";"Squamata";"Polychrotidae";"Terrestrial";
-"Anolis carolinensis";"Animalia";"Chordata";"Reptilia";"";"Polychrotidae";"Terrestrial";
-"Anolis cristatellus";"Animalia";"Chordata";"Reptilia";"";"Polychrotidae";"Terrestrial";
-"Anolis distichus";"Animalia";"Chordata";"Reptilia";"";"Polychrotidae";"Terrestrial";
-"Anolis equestris";"Animalia";"Chordata";"Reptilia";"";"Polychrotidae";"Terrestrial";
-"Anolis extremus";"Animalia";"Chordata";"Reptilia";"";"Polychrotidae";"Terrestrial";
-"Anolis garmani";"Animalia";"Chordata";"Reptilia";"";"Polychrotidae";"Terrestrial";
-"Anolis leachii";"Animalia";"Chordata";"Reptilia";"";"Polychrotidae";"Terrestrial";
-"Anolis lineatus";"Animalia";"Chordata";"Reptilia";"";"Polychrotidae";"Terrestrial";
-"Anolis maynardi";"Animalia";"Chordata";"Reptilia";"";"Polychrotidae";"Terrestrial";
-"Anolis porcatus";"Animalia";"Chordata";"Reptilia";"";"Polychrotidae";"Terrestrial";
-"Anolis richardii";"Animalia";"Chordata";"Reptilia";"";"Polychrotidae";"Terrestrial";
-"Anolis trinitatis";"Animalia";"Chordata";"Reptilia";"";"Polychrotidae";"Terrestrial";
-"Anolis wattsi";"Animalia";"Chordata";"Reptilia";"";"Polychrotidae";"Terrestrial";
 "Anopheles quadrimaculatus";"Animalia";"Arthropoda";"Insecta";"Diptera";"Culicidae";"Terrestrial";
 "Anoplolepis gracilipes";"Animalia";"Arthropoda";"Insecta";"Hymenoptera";"Formicidae";"Terrestrial";
 "Anoplophora chinensis";"Animalia";"Arthropoda";"Insecta";"Coleoptera";"Cerambycidae";"Terrestrial";
@@ -99,17 +86,12 @@
 "Asystasia gangetica";"Plantae";"Magnoliophyta";"Magnoliopsida";"Scrophulariales";"Acanthaceae";"Terrestrial";
 "Aulacaspis yasumatsui";"Animalia";"Arthropoda";"Insecta";"Hemiptera";"Diaspididae";"Terrestrial";
 "Austroeupatorium inulifolium";"Plantae";"Magnoliophyta";"Magnoliopsida";"Asterales";"Eupatorieae";"Terrestrial";
-"Avian Influenza Virus";"Virus";"";"";"";"Orthomyxovirdae";"Terrestrial";
 "Axis axis";"Animalia";"Chordata";"Mammalia";"Artiodactyla";"Cervidae";"Terrestrial";
 "Azolla pinnata";"Plantae";"Pteridophyta";"Filicopsida";"Hydropteridales";"Azollaceae";"Terrestrial";
 "Bacopa monnieri";"Plantae";"Magnoliophyta";"Magnoliopsida";"Scrophulariales";"Scrophulariaceae";"Terrestrial";
 "Bactrocera tryoni";"Animalia";"Arthropoda";"Insecta";"Diptera";"Tephritidae";"Terrestrial";
-"Bagaza Virus (BAGV)";"Virus";"";"";"";"Flaviviridae";"Terrestrial";
 "Bambusa vulgaris";"Plantae";"Magnoliophyta";"Liliopsida";"Cyperales";"Poaceae";"Terrestrial";
-"Banana bunchy top virus (BBTV)";"Virus";"";"";"";"Circoviridae";"Terrestrial";
 "Batillaria attramentaria";"Animalia";"Mollusca";"Gastropoda";"Neotaenioglossa";"Batillariidae";"Marine";
-"Batrachochytrium dendrobatidis";"Fungi";"Chytridiomycota";"Chytridiomycetes";"Chytridiales";"";"Undefined";
-"Beak and feather disease virus (BFDV)";"Virus";"";"";"";"Circoviridae";"Terrestrial";
 "Begonia cucullata";"Plantae";"Magnoliophyta";"Magnoliopsida";"Violales";"Begoniaceae";"Terrestrial";
 "Bellis perennis";"Plantae";"Magnoliophyta";"Magnoliopsida";"Asterales";"Asteraceae";"Terrestrial";
 "Bemisia tabaci";"Animalia";"Arthropoda";"Insecta";"Homoptera";"Aleyrodidae";"Terrestrial";
@@ -205,7 +187,6 @@
 "Charybdis hellerii";"Animalia";"Arthropoda";"Malacostraca";"Decapoda";"Portunidae";"Marine_terrestrial";
 "Charybdis japonica";"Animalia";"Arthropoda";"Malacostraca";"Decapoda";"Portunidae";"Marine_terrestrial";
 "Chromolaena odorata";"Plantae";"Magnoliophyta";"Magnoliopsida";"Asterales";"Asteraceae";"Terrestrial";
-"Chronic Wasting Disease (CWD)";"Virus";"";"";"";"";"Terrestrial";
 "Chrysanthemoides monilifera";"Plantae";"Magnoliophyta";"Magnoliopsida";"Asterales";"Asteraceae";"Terrestrial";
 "Chrysobalanus icaco";"Plantae";"Magnoliophyta";"Magnoliopsida";"Rosales";"Chrysobalanaceae";"Terrestrial";
 "Chthamalus proteus";"Animalia";"Arthropoda";"Maxillopoda";"Sessilia";"Chthamalidae";"Terrestrial";
@@ -223,7 +204,6 @@
 "Citharexylum spinosum";"Plantae";"Magnoliophyta";"Magnoliopsida";"Lamiales";"Verbenaceae";"Terrestrial";
 "Civettictis civetta";"Animalia";"Chordata";"Mammalia";"Carnivora";"Viverridae";"Terrestrial";
 "Clarias batrachus";"Animalia";"Chordata";"Actinopterygii";"Siluriformes";"Clariidae";"Freshwater";
-"Clarias gariepinus";"Animalia";"Chordata";"Actinopterygii";"Siluriformes";"Clariidae";"";
 "Clematis terniflora";"Plantae";"Magnoliophyta";"Magnoliopsida";"Ranunculales";"Ranunculaceae";"Terrestrial";
 "Clematis vitalba";"Plantae";"Magnoliophyta";"Magnoliopsida";"Ranunculales";"Ranunculaceae";"Terrestrial";
 "Clidemia hirta";"Plantae";"Magnoliophyta";"Magnoliopsida";"Myrtales";"Melastomataceae";"Terrestrial";
@@ -269,7 +249,6 @@
 "Cytisus striatus";"Plantae";"Magnoliophyta";"Magnoliopsida";"Fabales";"Fabaceae";"Terrestrial";
 "Dactylis glomerata";"Plantae";"Magnoliophyta";"Liliopsida";"Cyperales";"Poaceae";"Terrestrial";
 "Dalbergia sissoo";"Plantae";"Magnoliophyta";"Magnoliopsida";"Fabales";"Fabaceae";"Terrestrial";
-"Daphnia lumholtzi";"Animalia";"Arthropoda";"Branchiopoda";"Diplostraca";"";"Terrestrial";
 "Delairea odorata";"Plantae";"Magnoliophyta";"Magnoliopsida";"Asterales";"Asteraceae";"Terrestrial";
 "Dendrobaena octaedra";"Animalia";"Annelida";"Clitellata";"Haplotaxida";"Lumbricidae";"Terrestrial";
 "Dendroctonus valens";"Animalia";"Arthropoda";"Insecta";"Coleoptera";"Curculionidae";"Terrestrial";
@@ -328,7 +307,6 @@
 "Ficus rubiginosa";"Plantae";"Magnoliophyta";"Magnoliopsida";"Urticales";"Moraceae";"Terrestrial";
 "Flacourtia indica";"Plantae";"Magnoliophyta";"Magnoliopsida";"Violales";"Flacourtiaceae";"Terrestrial";
 "Flemingia strobilifera";"Plantae";"Magnoliophyta";"Magnoliopsida";"Fabales";"Fabaceae";"Terrestrial";
-"Foot-and-mouth disease virus (FMDV)";"Virus";"";"";"";"Picornaviridae";"Terrestrial";
 "Fragaria vesca";"Plantae";"Magnoliophyta";"Magnoliopsida";"Rosales";"Rosaceae";"Terrestrial";
 "Frangula alnus";"Plantae";"Magnoliophyta";"Magnoliopsida";"Rhamnales";"Rhamnaceae";"Terrestrial";
 "Fraxinus floribunda";"Plantae";"Magnoliophyta";"Magnoliopsida";"Scrophulariales";"Oleaceae";"Terrestrial";
@@ -517,7 +495,6 @@
 "Neonectria faginata";"Fungi";"Ascomycota";"Sordariomycetes";"Hypocreales";"Nectriaceae";"Terrestrial";
 "Neovison vison";"Animalia";"Chordata";"Mammalia";"Carnivora";"Mustelidae";"Terrestrial";
 "Nephrolepis cordifolia";"Plantae";"Pteridophyta";"Filicopsida";"Polypodiales";"Dryopteridaceae";"Terrestrial";
-"Newcastle disease virus (NDV)";"Virus";"";"";"";"";"Terrestrial";
 "Neyraudia reynaudiana";"Plantae";"Magnoliophyta";"Liliopsida";"Cyperales";"Poaceae";"Terrestrial";
 "Nicotiana glauca";"Plantae";"Magnoliophyta";"Magnoliopsida";"Solanales";"Solanaceae";"Terrestrial";
 "Norops grahami";"Animalia";"Chordata";"Reptilia";"Squamata";"Polychrotidae";"Terrestrial";
@@ -744,7 +721,6 @@
 "Sesbania punicea";"Plantae";"Magnoliophyta";"Magnoliopsida";"Fabales";"Fabaceae";"Terrestrial";
 "Setaria verticillata";"Plantae";"Magnoliophyta";"Liliopsida";"Cyperales";"Poaceae";"Terrestrial";
 "Sirex noctilio";"Animalia";"Arthropoda";"Insecta";"Hymenoptera";"Siricidae";"Terrestrial";
-"Sirococcus clavigignenti-juglandacearum";"Fungi";"Ascomycota";"Sordariomycetes";"Diaporthales";"";"Terrestrial";
 "Solanum mauritianum";"Plantae";"Magnoliophyta";"Magnoliopsida";"Solanales";"Solanaceae";"Terrestrial";
 "Solanum seaforthianum";"Plantae";"Magnoliophyta";"Magnoliopsida";"Solanales";"Solanaceae";"Terrestrial";
 "Solanum sisymbriifolium";"Plantae";"Magnoliophyta";"Magnoliopsida";"Solanales";"Solanaceae";"Terrestrial";
@@ -851,7 +827,6 @@
 "Wasmannia auropunctata";"Animalia";"Arthropoda";"Insecta";"Hymenoptera";"Formicidae";"Terrestrial";
 "Waterhousea floribunda";"Plantae";"Magnoliophyta";"Magnoliopsida";"Myrtales";"Myrtaceae";"Terrestrial";
 "Watersipora subtorquata";"Animalia";"Ectoprocta";"Gymnolaemata";"Cheilostomata";"Watersiporidae";"Marine";
-"West Nile virus";"Virus";"";"";"";"Flaviviridae";"Terrestrial";
 "Wisteria floribunda";"Plantae";"Magnoliophyta";"Magnoliopsida";"Fabales";"Fabaceae";"Terrestrial";
 "Wisteria sinensis";"Plantae";"Magnoliophyta";"Magnoliopsida";"Fabales";"Fabaceae";"Terrestrial";
 "Xanthium spinosum";"Plantae";"Magnoliophyta";"Magnoliopsida";"Asterales";"Asteraceae";"Terrestrial";
