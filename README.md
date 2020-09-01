@@ -1,5 +1,5 @@
 
-# NomedoProjeto
+Classificação biológica
 
 **Número da Lista**: 1<br>
 **Conteúdo da Disciplina**: Grafos 1 <br>
@@ -11,15 +11,19 @@
 | 18/0100726 | Filipe Campos Guimarães
 
 ## Sobre 
-Descreva os objetivos do seu projeto e como ele funciona. 
+o projeto será baseado nas classificações biológicas ...
 
 ## Screenshots
 Adicione 3 ou mais screenshots do projeto em funcionamento.
 
 ## Instalação 
-**Linguagem**: xxxxxx<br>
-**Framework**: (caso exista)<br>
-Descreva os pré-requisitos para rodar o seu projeto e os comandos necessários.
+**Linguagem**: Python
+**Framework**:
+numpy==1.19.1
+pandas==1.1.1
+python-dateutil==2.8.1
+pytz==2020.1
+six==1.15.0
 
 ## Uso 
 Explique como usar seu projeto caso haja algum passo a passo após o comando de execução.
