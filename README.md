@@ -18,15 +18,21 @@ Adicione 3 ou mais screenshots do projeto em funcionamento.
 
 ## Instalação 
 **Linguagem**: Python
-**Framework**:
-numpy==1.19.1
-pandas==1.1.1
-python-dateutil==2.8.1
-pytz==2020.1
-six==1.15.0
+### Linux
+
+#### Pelo terminal
+- Para clonar o repositório:
+> $ git clone https://github.com/projeto-de-algoritmos/Grafos1_ClassificacaoBiologica
+
+- Acesse a pasta do projeto:
+``` $ cd Grafos1_ClassificacaoBiologica/```
+- Instale as dependencias:
+``` $ pip3  install -r requeriments.txt ```
 
 ## Uso 
-Explique como usar seu projeto caso haja algum passo a passo após o comando de execução.
+Execute o programa com o comando 
+``` $ python3 main.py ```
+siga as intruções do termial
 
 ## Outros 
 Quaisquer outras informações sobre seu projeto podem ser descritas abaixo.
