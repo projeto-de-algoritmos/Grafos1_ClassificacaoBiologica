@@ -132,9 +132,9 @@
 "Calluna vulgaris";"Plantae";"Magnoliophyta";"Magnoliopsida";"Ericales";"Ericaceae";"Terrestrial";
 "Camelina sativa";"Plantae";"Magnoliophyta";"Magnoliopsida";"Capparales";"Brassicaceae";"Terrestrial";
 "Camelus dromedarius";"Animalia";"Chordata";"Mammalia";"Artiodactyla";"Camelidae";"Terrestrial";
-"Candidatus Liberibacter africanus";"Bacteria";"Proteobacteria";"Alphaproteobacteria";"Rhizobiales";"Rhizobiaceae";"Terrestrial";
-"Candidatus Liberibacter americanus";"Bacteria";"Proteobacteria";"Alphaproteobacteria";"Rhizobiales";"Rhizobiaceae";"Terrestrial";
-"Candidatus Liberibacter asiaticus";"Bacteria";"Proteobacteria";"Alphaproteobacteria";"Rhizobiales";"Rhizobiaceae";"Terrestrial";
+"Candidatus Liberibacter africanus";"Monera";"Proteobacteria";"Alphaproteobacteria";"Rhizobiales";"Rhizobiaceae";"Terrestrial";
+"Candidatus Liberibacter americanus";"Monera";"Proteobacteria";"Alphaproteobacteria";"Rhizobiales";"Rhizobiaceae";"Terrestrial";
+"Candidatus Liberibacter asiaticus";"Monera";"Proteobacteria";"Alphaproteobacteria";"Rhizobiales";"Rhizobiaceae";"Terrestrial";
 "Canis latrans";"Animalia";"Chordata";"Mammalia";"Carnivora";"Canidae";"Terrestrial";
 "Canis lupus";"Animalia";"Chordata";"Mammalia";"Carnivora";"Canidae";"Terrestrial";
 "Canna indica";"Plantae";"Magnoliophyta";"Liliopsida";"Zingiberales";"Cannaceae";"Terrestrial";
@@ -553,7 +553,7 @@
 "Passiflora maliformis";"Plantae";"Magnoliophyta";"Magnoliopsida";"Violales";"Passifloraceae";"Terrestrial";
 "Passiflora suberosa";"Plantae";"Magnoliophyta";"Magnoliopsida";"Violales";"Passifloraceae";"Terrestrial";
 "Passiflora tarminiana";"Plantae";"Magnoliophyta";"Magnoliopsida";"Violales";"Passifloraceae";"Terrestrial";
-"Pasteurella multocida";"Bacteria";"Proteobacteria";"Gammaproteobacteria";"Pasteurellales";"Pasteurellaceae";"Terrestrial";
+"Pasteurella multocida";"Monera";"Proteobacteria";"Gammaproteobacteria";"Pasteurellales";"Pasteurellaceae";"Terrestrial";
 "Paulownia tomentosa";"Plantae";"Magnoliophyta";"Magnoliopsida";"Scrophulariales";"Scrophulariaceae";"Terrestrial";
 "Perca fluviatilis";"Animalia";"Chordata";"Actinopterygii";"Perciformes";"Percidae";"Freshwater";
 "Perna perna";"Animalia";"Mollusca";"Bivalvia";"Mytiloida";"Mytilidae";"Marine";
@@ -817,7 +817,7 @@
 "Vespula germanica";"Animalia";"Arthropoda";"Insecta";"Hymenoptera";"Vespidae";"Terrestrial";
 "Vespula pensylvanica";"Animalia";"Arthropoda";"Insecta";"Hymenoptera";"Vespidae";"Terrestrial";
 "Vespula vulgaris";"Animalia";"Arthropoda";"Insecta";"Hymenoptera";"Vespidae";"Terrestrial";
-"Vibrio cholerae";"Bacteria";"Proteobacteria";"Gammaproteobacteria";"Vibrionales";"Vibrionaceae";"Freshwater_terrestrial";
+"Vibrio cholerae";"Monera";"Proteobacteria";"Gammaproteobacteria";"Vibrionales";"Vibrionaceae";"Freshwater_terrestrial";
 "Vinca major";"Plantae";"Magnoliophyta";"Magnoliopsida";"Gentianales";"Apocynaceae";"Terrestrial";
 "Vitex rotundifolia";"Plantae";"Magnoliophyta";"Magnoliopsida";"Lamiales";"Verbenaceae";"Terrestrial";
 "Viverricula indica";"Animalia";"Chordata";"Mammalia";"Carnivora";"Viverridae";"Terrestrial";
@@ -830,14 +830,14 @@
 "Wisteria floribunda";"Plantae";"Magnoliophyta";"Magnoliopsida";"Fabales";"Fabaceae";"Terrestrial";
 "Wisteria sinensis";"Plantae";"Magnoliophyta";"Magnoliopsida";"Fabales";"Fabaceae";"Terrestrial";
 "Xanthium spinosum";"Plantae";"Magnoliophyta";"Magnoliopsida";"Asterales";"Asteraceae";"Terrestrial";
-"Xanthomonas axonopodis pv.citri";"Bacteria";"Proteobacteria";"Gammaproteobacteria";"Xanthomonadales";"Xanthomonadaceae";"Undefined";
+"Xanthomonas axonopodis pv.citri";"Monera";"Proteobacteria";"Gammaproteobacteria";"Xanthomonadales";"Xanthomonadaceae";"Undefined";
 "Xenopus laevis";"Animalia";"Chordata";"Amphibia";"Anura";"Pipidae";"Brackish";
 "Xiphophorus hellerii";"Animalia";"Chordata";"Actinopterygii";"Cyprinodontiformes";"Poeciliidae";"Freshwater";
 "Xyleborus glabratus";"Animalia";"Arthropoda";"Insecta";"Coleoptera";"Curculionidae";"Terrestrial";
-"Xylella fastidiosa";"Bacteria";"Proteobacteria";"Gammaproteobacteria";"Xanthomonadales";"Xanthomonadaceae";"Terrestrial";
+"Xylella fastidiosa";"Monera";"Proteobacteria";"Gammaproteobacteria";"Xanthomonadales";"Xanthomonadaceae";"Terrestrial";
 "Xylosandrus compactus";"Animalia";"Arthropoda";"Insecta";"Coleoptera";"Scolytidae";"Terrestrial";
 "Xylosandrus mutilatus";"Animalia";"Arthropoda";"Insecta";"Coleoptera";"Scolytidae";"Terrestrial";
-"Yersinia pestis";"Bacteria";"Proteobacteria";"Gammaproteobacteria";"Enterobacteriales";"Enterobacteriaceae";"Terrestrial";
+"Yersinia pestis";"Monera";"Proteobacteria";"Gammaproteobacteria";"Enterobacteriales";"Enterobacteriaceae";"Terrestrial";
 "Zantedeschia aethiopica";"Plantae";"Magnoliophyta";"Liliopsida";"Arales";"Araceae";"Terrestrial";
 "Zizania latifolia";"Plantae";"Magnoliophyta";"Liliopsida";"Cyperales";"Poaceae";"Terrestrial";
 "Ziziphus mauritiana";"Plantae";"Magnoliophyta";"Magnoliopsida";"Rhamnales";"Rhamnaceae";"Terrestrial";

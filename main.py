@@ -2,41 +2,52 @@ import json
 import pandas as pd
 from grafo import *
 
+
 def readDB():
     pd.read_csv("export_gisd.csv").to_json("bd.json")
 
     with open('bd.json') as json_file:
         data_set = json.load(json_file)
-    
+
     return data_set
+
 
 def makeAdjacencyList():
 
-    data_set= readDB()
+    data_set = readDB()
 
     # Modelando os dados
     data = {}
     cont = 0
-    dictTemp={}
-    title=()
+    dictTemp = {}
+    title = ()
     for (key, x) in data_set.items():
 
         title = list(key.split(";"))
         title = tuple(title[:6])
-        title = tuple(title)
         for y in x.values():
             item = y.replace("\"", "").split(";")
             for group in enumerate(title):
                 data[cont] = {'name': item[group[0]], 'group': group[0]}
                 if not item[group[0]] in dictTemp:
-                    dictTemp[item[group[0]]] = {'id': cont} #enumerando cada nó  
+                    dictTemp[item[group[0]]] = {
+                        'id': cont}  # enumerando cada nó
                     cont += 1
         with open('data.json', 'w') as json_file:
             json.dump(data, json_file)
 
-  # Montando a lista de adjacencia
-    listaDeAdjacencia = {}
+    reinos = ("Animalia", "Monera", "Plantae", "Fungi", "Protista")
 
+    listaDeAdjacencia = {}
+    
+    # Linkando os reinos ao nó raiz
+
+    for x in reinos:
+        if not listaDeAdjacencia.get(0):
+            listaDeAdjacencia[0] = []
+        listaDeAdjacencia[0].append(dictTemp[x]["id"])
+
+    # Montando a lista de adjacencia
     for (key, x) in data_set.items():
 
         for y in x.values():
@@ -49,7 +60,7 @@ def makeAdjacencyList():
                 if key[0] == 0:
                     id_nome = dictTemp.get(item[key[0]])['id']
                     id_vizinho = dictTemp.get(item[5])['id']
-                # Criando aresta para os outros nos de forma decrescente 
+                # Criando aresta para os outros nos de forma decrescente
                 elif(key[0]+1 < 6):
                     id_nome = dictTemp.get(item[key[0]+1])['id']
                     id_vizinho = dictTemp.get(item[key[0]])['id']
@@ -61,9 +72,8 @@ def makeAdjacencyList():
                 # verificando se a aresta ja foi colocada
                 if not id_nome in listaDeAdjacencia[id_vizinho]:
                     listaDeAdjacencia[id_vizinho].append(id_nome)
-        print(listaDeAdjacencia)
         return (listaDeAdjacencia)
 
 
 if __name__ == "__main__":
-   makeAdjacencyList()
+    makeAdjacencyList()
