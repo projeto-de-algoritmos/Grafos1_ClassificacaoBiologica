@@ -3,7 +3,7 @@ import pandas as pd
 from grafo import *
 
 def readDB():
-    pd.read_csv("export_gisds.csv").to_json("bd.json")
+    pd.read_csv("export_gisd.csv").to_json("bd.json")
 
     with open('bd.json') as json_file:
         data_set = json.load(json_file)
@@ -30,7 +30,7 @@ def makeAdjacencyList():
                 data[cont] = {'name': item[group[0]], 'group': group[0]}
                 if not item[group[0]] in dictTemp:
                     dictTemp[item[group[0]]] = {'id': cont} #enumerando cada nó  
-                cont += 1
+                    cont += 1
         with open('data.json', 'w') as json_file:
             json.dump(data, json_file)
 
@@ -61,7 +61,7 @@ def makeAdjacencyList():
                 # verificando se a aresta ja foi colocada
                 if not id_nome in listaDeAdjacencia[id_vizinho]:
                     listaDeAdjacencia[id_vizinho].append(id_nome)
-        
+        print(listaDeAdjacencia)
         return (listaDeAdjacencia)
 
 
