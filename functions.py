@@ -154,56 +154,54 @@ def show_result(path):
 
 def Menu_de_cadastro():
     register = []
-    while 1:
+    register.append(
+        input('Enter the specie you wish to register:').lower().capitalize())
+    exist = search(get_id_name(name=register[-1]))
+    if exist:
+        print("This specie already exist!")
+        show_result(exist)
+    else:
         register.append(
-            input('Enter the specie you wish to register:').lower().capitalize())
+            input('Enter the family to which the species belongs:').lower().capitalize())
         exist = search(get_id_name(name=register[-1]))
         if exist:
-            print("This specie already exist!")
-            show_result(exist)
+            # cadastrar especie linkando na familia
+            register_from_this(register, exist)
+            print("Saved successful")
         else:
             register.append(
-                input('Enter the family to which the species belongs:').lower().capitalize())
+                input('Enter the Order to which this Family belongs:').lower().capitalize())
             exist = search(get_id_name(name=register[-1]))
             if exist:
-                # cadastrar especie linkando na familia
+                # cadastrar familia linkando na ordem
                 register_from_this(register, exist)
                 print("Saved successful")
             else:
                 register.append(
-                    input('Enter the Order to which this Family belongs:').lower().capitalize())
+                    input('Enter the Class to which this Order belongs:').lower().capitalize())
                 exist = search(get_id_name(name=register[-1]))
                 if exist:
-                    # cadastrar familia linkando na ordem
+                    # cadastrar ordem linkando na classe
                     register_from_this(register, exist)
                     print("Saved successful")
                 else:
                     register.append(
-                        input('Enter the Class to which this Order belongs:').lower().capitalize())
+                        input('Enter the Philo that this Class belongs:').lower().capitalize())
                     exist = search(get_id_name(name=register[-1]))
                     if exist:
-                        # cadastrar ordem linkando na classe
                         register_from_this(register, exist)
+                        # cadastrar classe linkando no filo
                         print("Saved successful")
-
                     else:
                         register.append(
-                            input('Enter the Philo that this Class belongs:').lower().capitalize())
+                            input('Enter the Kingdom to which this Phylum belongs:').lower().capitalize())
                         exist = search(get_id_name(name=register[-1]))
                         if exist:
+                            # cadastrar filo linkando no Reino
                             register_from_this(register, exist)
-                            # cadastrar classe linkando no filo
                             print("Saved successful")
                         else:
-                            register.append(
-                                input('Enter the Kingdom to which this Phylum belongs:').lower().capitalize())
-                            exist = search(get_id_name(name=register[-1]))
-                            if exist:
-                                # cadastrar filo linkando no Reino
-                                register_from_this(register, exist)
-                                print("Saved successful")
-                            else:
-                                print(register)
+                            print(register)
 
             # os.system('clear')
             # print("\n\n\n---------------Please enter a valid option---------------\n\n\n")
@@ -221,26 +219,26 @@ def register_from_this(register, rest):
 
 def Menuinicial():
     os.system('clear')
-    while 1:
-        print('''Home menu:\n
+    print('''Home menu:\n
 [1] Search
 [2] Register\n ''')
 
-        op = input("Please enter the number of the option you want to select:")
+    op = input("Please enter the number of the option you want to select:")
 
-        if op == "1":
-            os.system('clear')
-            i = input(
-                "please type what you want to search for:\n").lower().capitalize()
-            result = search(get_id_name(name=i))
-            show_result(result)
-            pass
+    if op == "1":
+        os.system('clear')
+        i = input(
+            "please type what you want to search for:\n").lower().capitalize()
+        result = search(get_id_name(name=i))
+        show_result(result)
+        Menuinicial()
 
-        elif op == "2":
-            os.system('clear')
-            Menu_de_cadastro()
-            pass
+    elif op == "2":
+        os.system('clear')
+        Menu_de_cadastro()
+        print("saiu")
+        Menuinicial()
 
-        else:
-            os.system('clear')
-            print("\n\n\n---------------Please enter a valid option---------------\n\n\n")
+    else:
+        os.system('clear')
+        print("\n\n\n---------------Please enter a valid option---------------\n\n\n")
