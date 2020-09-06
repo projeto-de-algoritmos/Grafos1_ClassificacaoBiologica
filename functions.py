@@ -1,6 +1,5 @@
 import json
 import pandas as pd
-from grafo import *
 # from main import *
 # Ler 'banco de dados' e pre formata para uso
 
