@@ -10,6 +10,18 @@ def read_db():
     data_set = data_set.iloc[:, 0:6].to_dict()
     return data_set
 
+def write_db(taxonomic=[]):
+    if len(taxonomic==6):
+        columns = ["Species", "Kingdom", "Phylum", "Class", "Order", "Family"]
+        data_set = pd.read_csv("export_gisds.csv", sep=";")
+        data_set = data_set.iloc[:, 0:6]
+        insert = pd.DataFrame([taxonomic], columns=columns)
+        data_set = data_set.append(insert, ignore_index=True)
+        data_set.to_csv("export_gisds.csv", sep=";", index=False, header=True)
+
+    return data_set
+
+
 data_enumareted = {}
 
 def enumerate_data():
@@ -119,11 +131,12 @@ def search():
 def Menu_de_cadastro():
     while 1:
         print('''Do you want to register by:\n
+[0] Kingdom
 [1] Phylum
 [2] Class
 [3] Order
 [4] Family
-[5] species\n''')
+[5] Species\n''')
 
         op = input("Please enter the number of the option you want to select:")
 
