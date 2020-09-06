@@ -1,6 +1,6 @@
 import json
 import pandas as pd
-from grafo import *
+from functions import *
 
 
 def readDB():
