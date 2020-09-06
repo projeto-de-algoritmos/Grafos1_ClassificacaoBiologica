@@ -7,22 +7,28 @@ import os
 
 def read_db():
     data_set = pd.read_csv("export_gisd.csv", sep=";")
-    data_set = data_set.iloc[:, 0:6].to_dict()
+    data_set = data_set.iloc[:, 0:6]
+    data_set = data_set.reindex(
+        columns=["Species", "Family", "Order", "Class", "Phylum", "Kingdom"])
+    data_set.to_csv("export_gisd.csv", sep=";", index=False, header=True)
     return data_set
 
+
 def write_db(taxonomic=[]):
-    if len(taxonomic==6):
-        columns = ["Species", "Kingdom", "Phylum", "Class", "Order", "Family"]
-        data_set = pd.read_csv("export_gisds.csv", sep=";")
-        data_set = data_set.iloc[:, 0:6]
+    data_set = pd.read_csv("export_gisd.csv", sep=";")
+    data_set = data_set.iloc[:, 0:6]
+
+    if len(taxonomic) == 6:
+        columns = ["Species", "Family", "Order", "Class", "Phylum", "Kingdom"]
         insert = pd.DataFrame([taxonomic], columns=columns)
         data_set = data_set.append(insert, ignore_index=True)
-        data_set.to_csv("export_gisds.csv", sep=";", index=False, header=True)
+        data_set.to_csv("export_gisd.csv", sep=";", index=False, header=True)
 
     return data_set
 
 
 data_enumareted = {}
+
 
 def enumerate_data():
     global data_enumareted
@@ -39,16 +45,24 @@ def enumerate_data():
 
     return data_enumareted
 
+
 data_enumareted = enumerate_data()
 
 # retorna id ou nome da lista
+
+
 def get_id_name(id=None, name=None):
     global data_enumareted
     data = data_enumareted
     if id:
+        if not id in list(data.keys()):
+            return -1
         return data[id]
     if name:
+        if not name in list(data.values()):
+            return -1
         return list(data.values()).index(name)+1
+
 
 def read_adjacent_list():
     if not os.path.exists('data.json'):
@@ -58,8 +72,11 @@ def read_adjacent_list():
     return (adjacency_list)
 
 # Enumera cada nome da taxonomia
+
+
 def make_adjacent_list():
-    enumerate_data()
+    global data_enumareted
+    data_enumareted = enumerate_data()
     adjacency_list = {}
     groups = {0: 'Species', 1: 'Family', 2: 'Order',
               3: 'Class', 4: 'Phylum', 5: 'Kingdom'}
@@ -111,68 +128,95 @@ def find_path(graph, start, end, path=[]):
     for node in graph.get(str(start)):
         if node not in path:
             newpath = find_path(graph, node, end, path)
-            if newpath: return newpath
+            if newpath:
+                return newpath
     return None
 
 
-def search():
+def search(id):
     adjacency_list = read_adjacent_list()
-    i = input("please type what you want to search for:\n").lower().capitalize()
-    j = get_id_name(name=i)
-    path = find_path(adjacency_list, 0, j)
+    path = find_path(adjacency_list, 0, id)
+
+    return path
+
+
+def show_result(path):
+    groups = {6: 'Specie', 5: 'Family', 4: 'Order',
+              3: 'Class', 2: 'Phylum', 1: 'Kingdom'}
     if (path == None):
-        print("\n\n\n-----------------------------\n Taxonomia nao encontrada\n-----------------------------\n\n\n")
+        print("\n\n\n-----------------------------\n Taxonomic not found\n-----------------------------\n\n\n")
     else:
         for x in path:
             if x != 0:
-                print(get_id_name(id=x))
+                print(f'{groups[path.index(x)]}: {get_id_name(id=x)}')
 
 
 def Menu_de_cadastro():
+    register = []
     while 1:
-        print('''Do you want to register by:\n
-[0] Kingdom
-[1] Phylum
-[2] Class
-[3] Order
-[4] Family
-[5] Species\n''')
-
-        op = input("Please enter the number of the option you want to select:")
-
-        if op == "1":
-            os.system('clear')
-            help = input("Enter the Kingdom to which this Phylum belongs:")
-            # funçao de busca recebendo o nó Busca_cadastro(help)
-            pass
-
-        elif op == "2":
-            os.system('clear')
-            help = input("Enter the Philo that this Class belongs to:")
-            # funçao de busca recebendo o nó Busca_cadastro(help)
-            pass
-
-        elif op == "3":
-            os.system('clear')
-            help = input("Enter the Class to which this Order belongs:")
-            # funçao de busca recebendo o nó Busca_cadastro(help)
-            pass
-
-        elif op == "4":
-            os.system('clear')
-            help = input("Enter the Order to which this Family belongs:")
-            # funçao de busca recebendo o nó Busca_cadastro(help)
-            pass
-
-        elif op == "5":
-            os.system('clear')
-            help = input("Enter the Family to which this species belongs:")
-            # funçao de busca recebendo o nó Busca_cadastro(help)
-            pass
-
+        register.append(
+            input('Enter the specie you wish to register:').lower().capitalize())
+        exist = search(get_id_name(name=register[-1]))
+        if exist:
+            print("This specie already exist!")
+            show_result(exist)
         else:
-            os.system('clear')
-            print("\n\n\n---------------Please enter a valid option---------------\n\n\n")
+            register.append(
+                input('Enter the family to which the species belongs:').lower().capitalize())
+            exist = search(get_id_name(name=register[-1]))
+            if exist:
+                # cadastrar especie linkando na familia
+                register_from_this(register, exist)
+                print("Saved successful")
+            else:
+                register.append(
+                    input('Enter the Order to which this Family belongs:').lower().capitalize())
+                exist = search(get_id_name(name=register[-1]))
+                if exist:
+                    # cadastrar familia linkando na ordem
+                    register_from_this(register, exist)
+                    print("Saved successful")
+                else:
+                    register.append(
+                        input('Enter the Class to which this Order belongs:').lower().capitalize())
+                    exist = search(get_id_name(name=register[-1]))
+                    if exist:
+                        # cadastrar ordem linkando na classe
+                        register_from_this(register, exist)
+                        print("Saved successful")
+
+                    else:
+                        register.append(
+                            input('Enter the Philo that this Class belongs:').lower().capitalize())
+                        exist = search(get_id_name(name=register[-1]))
+                        if exist:
+                            register_from_this(register, exist)
+                            # cadastrar classe linkando no filo
+                            print("Saved successful")
+                        else:
+                            register.append(
+                                input('Enter the Kingdom to which this Phylum belongs:').lower().capitalize())
+                            exist = search(get_id_name(name=register[-1]))
+                            if exist:
+                                # cadastrar filo linkando no Reino
+                                register_from_this(register, exist)
+                                print("Saved successful")
+                            else:
+                                print(register)
+
+            # os.system('clear')
+            # print("\n\n\n---------------Please enter a valid option---------------\n\n\n")
+
+
+def register_from_this(register, rest):
+    rest.pop()
+    while rest:
+        if get_id_name(id=rest[-1]):
+            register.append(get_id_name(id=rest.pop()))
+        else:
+            rest.pop()
+    write_db(register)
+    make_adjacent_list()
 
 
 def Menuinicial():
@@ -180,13 +224,16 @@ def Menuinicial():
     while 1:
         print('''Home menu:\n
 [1] Search
-[2] register\n ''')
+[2] Register\n ''')
 
         op = input("Please enter the number of the option you want to select:")
 
         if op == "1":
             os.system('clear')
-            search()
+            i = input(
+                "please type what you want to search for:\n").lower().capitalize()
+            result = search(get_id_name(name=i))
+            show_result(result)
             pass
 
         elif op == "2":
