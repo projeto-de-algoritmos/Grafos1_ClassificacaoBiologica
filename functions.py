@@ -22,8 +22,9 @@ def write_db(taxonomic=[]):
         columns = ["Species", "Family", "Order", "Class", "Phylum", "Kingdom"]
         insert = pd.DataFrame([taxonomic], columns=columns)
         data_set = data_set.append(insert, ignore_index=True)
+        data_set = data_set.sort_values('Species')
         data_set.to_csv("export_gisd.csv", sep=";", index=False, header=True)
-
+    make_adjacent_list()
     return data_set
 
 
@@ -216,7 +217,6 @@ def register_from_this(register, rest):
         else:
             rest.pop()
     write_db(register)
-    make_adjacent_list()
 
 
 def Menuinicial():
