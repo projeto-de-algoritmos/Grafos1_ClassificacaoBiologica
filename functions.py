@@ -73,3 +73,85 @@ if __name__ == "__main__":
     a= find_path(adjacency_list, 77, get_id_name(name="Suncus murinus"))
     for x in a:
         print(get_id_name(id=x))
+ 
+
+def find_path(graph, start, end, path=[]):
+    path = path + [start]
+    if start == end:
+        return path
+    if not graph.get(str(start)):
+        return None
+    for node in graph.get(str(start)):
+        if node not in path:
+            newpath = find_path(graph, node, end, path)
+            if newpath: return newpath
+    return None
+
+def Menu_de_cadastro():
+    while 1:
+        print('''Do you want to register by:\n
+[1] Phylum
+[2] Class
+[3] Order
+[4] Family
+[5] species\n''')
+
+        op = input("Please enter the number of the option you want to select:")
+        
+        if op == "1":
+            os.system('clear')
+            ajuda = input("Enter the Kingdom to which this Phylum belongs:")
+            #funçao de busca recebendo o nó Busca_cadastro(ajuda)
+            pass
+                
+        elif op == "2":
+            os.system('clear')
+            ajuda = input("Enter the Philo that this Class belongs to:") 
+            #funçao de busca recebendo o nó Busca_cadastro(ajuda)       
+            pass  
+
+        elif op == "3":
+            os.system('clear')
+            ajuda = input("Enter the Class to which this Order belongs:") 
+            #funçao de busca recebendo o nó Busca_cadastro(ajuda)        
+            pass 
+
+        elif op == "4":
+            os.system('clear') 
+            ajuda = input("Enter the Order to which this Family belongs:")  
+            #funçao de busca recebendo o nó Busca_cadastro(ajuda)               
+            pass 
+
+        elif op == "5":
+            os.system('clear') 
+            ajuda = input("Enter the Family to which this species belongs:")   
+            #funçao de busca recebendo o nó Busca_cadastro(ajuda)                 
+            pass 
+                    
+        else:
+            os.system('clear') 
+            print("\n\n\n---------------Please enter a valid option---------------\n\n\n")
+
+def Menuinicial(graph):
+    os.system('clear') 
+    
+    while 1:
+        print('''Home menu:\n
+[1] Search
+[2] register\n ''')
+
+        op = input("Please enter the number of the option you want to select:")
+    
+        if op == "1":
+            os.system('clear')
+            search(graph)
+            pass
+                
+        elif op == "2":
+            os.system('clear')         
+            Menu_de_cadastro()
+            pass  
+                    
+        else:
+            os.system('clear') 
+            print("\n\n\n---------------Please enter a valid option---------------\n\n\n")
