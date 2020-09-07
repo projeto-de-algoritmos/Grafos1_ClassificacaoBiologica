@@ -13,10 +13,11 @@ def read_db():
 
 # Salva no arquivo csv a nova especie 
 def write_db(taxonomic=[]):
+    columns=['species','genus' ,'family', 'order', 'class', 'phylum', 'kingdom']
     df = pd.read_csv("bd.csv", sep=";")
-    df=df.loc[:, df.columns.isin(['species','genus' ,'family', 'order', 'class', 'phylum', 'kingdom'])]
+    df=df.loc[:, df.columns.isin(columns)]
+    print("Registrando...")
     if len(taxonomic) == 7:
-        columns = ['species','genus' ,'family', 'order', 'class', 'phylum', 'kingdom']
         insert = pd.DataFrame([taxonomic], columns=columns)
         df = df.append(insert, ignore_index=True)
         df = df.sort_values('species')
