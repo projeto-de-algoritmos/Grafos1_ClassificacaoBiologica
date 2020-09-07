@@ -5,26 +5,24 @@ import os
 
 # Ler 'banco de dados' e pre formata para uso
 def read_db():
-    data_set = pd.read_csv("export_gisd.csv", sep=";")
-    data_set = data_set.iloc[:, 0:6]
-    data_set = data_set.reindex(
-        columns=["Species", "Family", "Order", "Class", "Phylum", "Kingdom"])
-    data_set.to_csv("export_gisd.csv", sep=";", index=False, header=True)
-    return data_set
+    df = pd.read_csv("bd.csv", sep=";")
+    df=df.dropna()
+    df = df.reindex(
+        columns=['species','genus' ,'family', 'order', 'class', 'phylum', 'kingdom'])
+    return df.to_dict()
 
 # Salva no arquivo csv a nova especie 
 def write_db(taxonomic=[]):
-    data_set = pd.read_csv("export_gisd.csv", sep=";")
-    data_set = data_set.iloc[:, 0:6]
-
-    if len(taxonomic) == 6:
-        columns = ["Species", "Family", "Order", "Class", "Phylum", "Kingdom"]
+    df = pd.read_csv("bd.csv", sep=";")
+    df=df.loc[:, df.columns.isin(['species','genus' ,'family', 'order', 'class', 'phylum', 'kingdom'])]
+    if len(taxonomic) == 7:
+        columns = ['species','genus' ,'family', 'order', 'class', 'phylum', 'kingdom']
         insert = pd.DataFrame([taxonomic], columns=columns)
-        data_set = data_set.append(insert, ignore_index=True)
-        data_set = data_set.sort_values('Species')
-        data_set.to_csv("export_gisd.csv", sep=";", index=False, header=True)
+        df = df.append(insert, ignore_index=True)
+        df = df.sort_values('species')
+        df.to_csv("bd.csv", sep=";", index=False, header=True)
     make_adjacent_list()
-    return data_set
+    return df
 
 
 data_enumareted = {}
@@ -34,8 +32,8 @@ def enumerate_data():
     global data_enumareted
     data_set = read_db()
     cont = 1
-    for x in range(len(data_set['Species'])):
-        for groups in ('Species', 'Family', 'Order', 'Class', 'Phylum', 'Kingdom'):
+    for x in range(len(data_set['species'])):
+        for groups in ('species','genus' ,'family', 'order', 'class', 'phylum', 'kingdom'):
             if (data_set[groups][x] not in list(data_enumareted.values())):
                 data_enumareted[cont] = data_set[groups][x]
                 cont += 1
@@ -75,20 +73,20 @@ def make_adjacent_list():
     global data_enumareted
     data_enumareted = enumerate_data()
     adjacency_list = {}
-    groups = {0: 'Species', 1: 'Family', 2: 'Order',
-              3: 'Class', 4: 'Phylum', 5: 'Kingdom'}
+    groups = {0: 'species', 1:'genus',2: 'family', 3: 'order',
+              4: 'class', 5: 'phylum', 6: 'kingdom'}
 
     data = read_db()
 
-    for row_in_data in range(len(data['Species'])):
+    for row_in_data in range(len(data['species'])):
         for (key, name) in groups.items():
 
             # Adicionando Reinos à raiz
             if not adjacency_list.get(0):
                 adjacency_list[0] = []
-            if not (get_id_name(name=data['Kingdom'][row_in_data]) in adjacency_list.get(0)):
+            if not (get_id_name(name=data['kingdom'][row_in_data]) in adjacency_list.get(0)):
                 adjacency_list[0].append(get_id_name(
-                    name=data['Kingdom'][row_in_data]))
+                    name=data['kingdom'][row_in_data]))
 
             if(key < len(groups)-1):
                 # Pegando id dos nós
@@ -129,7 +127,7 @@ def search(id):
 
 # Mostrar a taxonomia da especie na tela
 def show_result(path):
-    groups = {6: 'species', 5: 'Family', 4: 'Order',
+    groups = {7: 'Species',6:'Genus',5: 'Family', 4: 'Order',
               3: 'Class', 2: 'Phylum', 1: 'Kingdom'}
     if (path == None):
         print("\n\n\n-----------------------------\n Taxonomic not found\n-----------------------------\n\n\n")
@@ -149,7 +147,7 @@ def Menu_de_cadastro():
         show_result(exist)
     else:
         register.append(
-            input('Enter the family to which the species belongs:').lower().capitalize())
+            input('Enter the Genus to which the species belongs:').lower().capitalize())
         exist = search(get_id_name(name=register[-1]))
         if exist:
             # cadastrar especie linkando na familia
@@ -157,41 +155,49 @@ def Menu_de_cadastro():
             print("Saved successful")
         else:
             register.append(
-                input('Enter the Order to which this Family belongs:').lower().capitalize())
+                input('Enter the family to which the genus belongs:').lower().capitalize())
             exist = search(get_id_name(name=register[-1]))
             if exist:
-                # cadastrar familia linkando na ordem
+                # cadastrar especie linkando na familia
                 register_from_this(register, exist)
                 print("Saved successful")
             else:
                 register.append(
-                    input('Enter the Class to which this Order belongs:').lower().capitalize())
+                    input('Enter the Order to which this Family belongs:').lower().capitalize())
                 exist = search(get_id_name(name=register[-1]))
                 if exist:
-                    # cadastrar ordem linkando na classe
+                    # cadastrar familia linkando na ordem
                     register_from_this(register, exist)
                     print("Saved successful")
                 else:
                     register.append(
-                        input('Enter the Philo that this Class belongs:').lower().capitalize())
+                        input('Enter the Class to which this Order belongs:').lower().capitalize())
                     exist = search(get_id_name(name=register[-1]))
                     if exist:
+                        # cadastrar ordem linkando na classe
                         register_from_this(register, exist)
-                        # cadastrar classe linkando no filo
                         print("Saved successful")
                     else:
                         register.append(
-                            input('Enter the Kingdom to which this Phylum belongs:').lower().capitalize())
+                            input('Enter the Philo that this Class belongs:').lower().capitalize())
                         exist = search(get_id_name(name=register[-1]))
                         if exist:
-                            # cadastrar filo linkando no Reino
                             register_from_this(register, exist)
+                            # cadastrar classe linkando no filo
                             print("Saved successful")
                         else:
-                            print(register)
+                            register.append(
+                                input('Enter the Kingdom to which this Phylum belongs:').lower().capitalize())
+                            exist = search(get_id_name(name=register[-1]))
+                            if exist:
+                                # cadastrar filo linkando no Reino
+                                register_from_this(register, exist)
+                                print("Saved successful")
+                            else:
+                                print(register)
 
-            # os.system('clear')
-            # print("\n\n\n---------------Please enter a valid option---------------\n\n\n")
+                # os.system('clear')
+                # print("\n\n\n---------------Please enter a valid option---------------\n\n\n")
 
 # Registra a especie a partir do ultimo nó em comum existente 
 def register_from_this(register, rest):
@@ -227,5 +233,5 @@ def home_menu():
         os.system("clear")
         exit()
     else:
-        os.system('clear')
         print("\n\n\n---------------Please enter a valid option---------------\n\n\n")
+        home_menu()
