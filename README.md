@@ -13,7 +13,7 @@ Classificação biológica
 ## Sobre 
 O trabalho trata da classificação taxonômica também conhecida como a forma de identificar e classificar os seres vivos.
   
-Foi utilizado um banco de dados preexistente com cerca de 1 milhões de especies com suas 7 classificações (Reino, Filo, Classe, Ordem, Família, Gênero, Espécie).
+Foi utilizado um banco de dados preexistente com cerca de 1 milhão de especies com suas 7 classificações (Reino, Filo, Classe, Ordem, Família, Gênero, Espécie).
 
 O Banco de dados foi convertido de arquivo "csv" para uma lista de adjacência e a partir desta temos a "estrutura do grafo". 
 
