@@ -1,4 +1,4 @@
 from functions import *
 
 if __name__ == "__main__":
-   Menuinicial() 
+   home_menu() 

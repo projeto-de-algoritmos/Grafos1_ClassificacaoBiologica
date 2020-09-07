@@ -2,9 +2,8 @@ import json
 import pandas as pd
 import os
 # from main import *
+
 # Ler 'banco de dados' e pre formata para uso
-
-
 def read_db():
     data_set = pd.read_csv("export_gisd.csv", sep=";")
     data_set = data_set.iloc[:, 0:6]
@@ -13,7 +12,7 @@ def read_db():
     data_set.to_csv("export_gisd.csv", sep=";", index=False, header=True)
     return data_set
 
-
+# Salva no arquivo csv a nova especie 
 def write_db(taxonomic=[]):
     data_set = pd.read_csv("export_gisd.csv", sep=";")
     data_set = data_set.iloc[:, 0:6]
@@ -30,7 +29,7 @@ def write_db(taxonomic=[]):
 
 data_enumareted = {}
 
-
+# Enumera cada nome da taxonomia
 def enumerate_data():
     global data_enumareted
     data_set = read_db()
@@ -50,8 +49,6 @@ def enumerate_data():
 data_enumareted = enumerate_data()
 
 # retorna id ou nome da lista
-
-
 def get_id_name(id=None, name=None):
     global data_enumareted
     data = data_enumareted
@@ -64,7 +61,7 @@ def get_id_name(id=None, name=None):
             return -1
         return list(data.values()).index(name)+1
 
-
+# ler a lista de adjacencia do arquivo json caso ela nao exista
 def read_adjacent_list():
     if not os.path.exists('data.json'):
         make_adjacent_list()
@@ -72,9 +69,8 @@ def read_adjacent_list():
         adjacency_list = json.load(json_file)
     return (adjacency_list)
 
-# Enumera cada nome da taxonomia
 
-
+# Constroi a lisa de adjacencia
 def make_adjacent_list():
     global data_enumareted
     data_enumareted = enumerate_data()
@@ -110,16 +106,7 @@ def make_adjacent_list():
 
     return adjacency_list
 
-
-if __name__ == "__main__":
-    with open('listaAjacencia.json', 'r') as json_file:
-        adjacency_list = json.load(json_file)
-
-    a = find_path(adjacency_list, 77, get_id_name(name="Suncus murinus"))
-    for x in a:
-        print(get_id_name(id=x))
-
-
+# Busca profunda para buscar o caminho
 def find_path(graph, start, end, path=[]):
     path = path + [start]
     if start == end:
@@ -133,14 +120,14 @@ def find_path(graph, start, end, path=[]):
                 return newpath
     return None
 
-
+# retorna o caminho do no
 def search(id):
     adjacency_list = read_adjacent_list()
     path = find_path(adjacency_list, 0, id)
 
     return path
 
-
+# Mostrar a taxonomia da especie na tela
 def show_result(path):
     groups = {6: 'Specie', 5: 'Family', 4: 'Order',
               3: 'Class', 2: 'Phylum', 1: 'Kingdom'}
@@ -151,6 +138,7 @@ def show_result(path):
             if x != 0:
                 print(f'{groups[path.index(x)]}: {get_id_name(id=x)}')
 
+# Menu de cadastro
 def Menu_de_cadastro():
     register = []
     register.append(
@@ -205,7 +193,7 @@ def Menu_de_cadastro():
             # os.system('clear')
             # print("\n\n\n---------------Please enter a valid option---------------\n\n\n")
 
-
+# Registra a especie a partir do ultimo nó em comum existente 
 def register_from_this(register, rest):
     rest.pop()
     while rest:
@@ -215,8 +203,8 @@ def register_from_this(register, rest):
             rest.pop()
     write_db(register)
 
-
-def Menuinicial():
+# Menu inicial
+def home_menu():
     os.system('clear')
     print('''Home menu:\n[1] Search\n[2] Register\n[0] Exit ''')
 
@@ -229,13 +217,13 @@ def Menuinicial():
         result = search(get_id_name(name=i))
         show_result(result)
         input ("Press ENTER to return to the home menu")
-        Menuinicial()
+        home_menu()
 
     elif op == "2":
         os.system('clear')
         Menu_de_cadastro()
         input ("Press ENTER to return to the home menu")
-        Menuinicial()
+        home_menu()
     elif op =="0":
         os.system("clear")
         exit()
