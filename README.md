@@ -15,9 +15,6 @@ o projeto será baseado nas classificações biológicas ...
 
 ## Screenshots
 
-
-
-
 ## Instalação 
 **Linguagem**: Python
 ### Linux
