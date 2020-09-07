@@ -27,7 +27,7 @@ Adicione 3 ou mais screenshots do projeto em funcionamento.
 - Acesse a pasta do projeto:
 ``` $ cd Grafos1_ClassificacaoBiologica/```
 - Instale as dependencias:
-``` $ pip3  install -r requeriments.txt ```
+``` $ pip3 install -r requirements.txt ```
 
 ## Uso 
 Execute o programa com o comando 
