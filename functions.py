@@ -151,7 +151,6 @@ def show_result(path):
             if x != 0:
                 print(f'{groups[path.index(x)]}: {get_id_name(id=x)}')
 
-
 def Menu_de_cadastro():
     register = []
     register.append(
@@ -219,9 +218,7 @@ def register_from_this(register, rest):
 
 def Menuinicial():
     os.system('clear')
-    print('''Home menu:\n
-[1] Search
-[2] Register\n ''')
+    print('''Home menu:\n[1] Search\n[2] Register\n[0] Exit ''')
 
     op = input("Please enter the number of the option you want to select:")
 
@@ -231,14 +228,17 @@ def Menuinicial():
             "please type what you want to search for:\n").lower().capitalize()
         result = search(get_id_name(name=i))
         show_result(result)
+        input ("Press ENTER to return to the home menu")
         Menuinicial()
 
     elif op == "2":
         os.system('clear')
         Menu_de_cadastro()
-        print("saiu")
+        input ("Press ENTER to return to the home menu")
         Menuinicial()
-
+    elif op =="0":
+        os.system("clear")
+        exit()
     else:
         os.system('clear')
         print("\n\n\n---------------Please enter a valid option---------------\n\n\n")
