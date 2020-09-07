@@ -15,8 +15,6 @@ def read_db():
     return df.to_dict()
 
 # Salva no arquivo csv a nova especie
-
-
 def write_db(taxonomic=[]):
     columns = ['species', 'genus', 'family',
                'order', 'class', 'phylum', 'kingdom']
@@ -34,8 +32,6 @@ def write_db(taxonomic=[]):
 
 
 # Enumera cada nome da taxonomia
-
-
 def enumerate_data():
     global data_enumerated
     data_set = read_db()
@@ -60,8 +56,9 @@ def get_id_name(id=None, name=None):
     data = data_enumerated
     if id:
         if not id in list(data.keys()):
-            if not str(id) in list(data.keys()):
+            if not int(id) in list(data.keys()):
                 return -1
+            return data[int(id)]
         return data[id]
     if name:
         if not name in list(data.values()):
@@ -141,8 +138,6 @@ def insert_in_adjacent_list(adjacency_list, species):
 
 
 # Busca profunda para buscar o caminho
-
-
 def find_path(graph, start, end, path=[]):
     path = path + [start]
     if start == end:
@@ -157,8 +152,6 @@ def find_path(graph, start, end, path=[]):
     return None
 
 # retorna o caminho do no
-
-
 def search(id):
     adjacency_list = read_adjacent_list()
     path = find_path(adjacency_list, 0, id)
@@ -166,8 +159,6 @@ def search(id):
     return path
 
 # Mostrar a taxonomia da especie na tela
-
-
 def show_result(path):
     groups = {7: 'Species', 6: 'Genus', 5: 'Family', 4: 'Order',
               3: 'Class', 2: 'Phylum', 1: 'Kingdom'}
@@ -179,8 +170,6 @@ def show_result(path):
                 print(f'{groups[path.index(x)]}: {get_id_name(id=x)}')
 
 # Menu de cadastro
-
-
 def Menu_de_cadastro():
     register = []
     register.append(
@@ -240,7 +229,6 @@ def Menu_de_cadastro():
                             else:
                                 print(register)
 
-
 # Registra a especie a partir do ultimo nó em comum existente
 def register_from_this(register, rest):
     rest.pop()
@@ -265,8 +253,6 @@ def register_from_this(register, rest):
     return adjacency_list
 
 # Menu inicial
-
-
 def home_menu():
     os.system('clear')
     print('''Home menu:\n[1] Search\n[2] Register\n[0] Exit ''')
