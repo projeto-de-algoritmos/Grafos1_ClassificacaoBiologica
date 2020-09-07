@@ -21,7 +21,7 @@ def write_db(taxonomic=[]):
     df = pd.read_csv("bd.csv", sep=";")
     df = df.loc[:, df.columns.isin(columns)]
 
-    print("Registrando...")
+    print("Registering...")
 
     if len(taxonomic) == 7:
         insert = pd.DataFrame([taxonomic], columns=columns)
