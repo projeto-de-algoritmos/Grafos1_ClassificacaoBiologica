@@ -30,7 +30,7 @@ Dessa forma, podemos saber quais nós estão ligados e fazer buscas para identif
 ## Registro de espécie existente"
 ![Alt text](/media/image3.jpeg?raw=true "Registro de espécie existente") 
 ## Registro de nova espécie
-![Alt text](/media/image1.jpeg?raw=true "Registro de nova espécie")
+![Alt text](/media/image4.jpeg?raw=true "Registro de nova espécie")
 
 ## Instalação 
 **Linguagem**: Python
