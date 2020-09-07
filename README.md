@@ -14,7 +14,9 @@ Classificação biológica
 o projeto será baseado nas classificações biológicas ...
 
 ## Screenshots
-Adicione 3 ou mais screenshots do projeto em funcionamento.
+
+
+
 
 ## Instalação 
 **Linguagem**: Python
