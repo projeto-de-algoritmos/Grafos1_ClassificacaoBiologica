@@ -23,7 +23,13 @@ Podemos exemplificar esse pensamento da seguinte forma: (Espécie: Homo sapiens,
 
 ## Screenshots
 
-![Alt text](/relative/media/image1.jpg?raw=true "Menu inicial")
+![Alt text](/media/image1.jpg?raw=true "Menu inicial")
+
+![Alt text](/media/image2.jpg?raw=true "Aba de busca")
+
+![Alt text](/media/image3.jpg?raw=true "Registro de espécie existente") 
+
+![Alt text](/media/image1.jpg?raw=true "Registro de nova espécie")
 
 ## Instalação 
 **Linguagem**: Python
