@@ -129,7 +129,7 @@ def search(id):
 
 # Mostrar a taxonomia da especie na tela
 def show_result(path):
-    groups = {6: 'Specie', 5: 'Family', 4: 'Order',
+    groups = {6: 'species', 5: 'Family', 4: 'Order',
               3: 'Class', 2: 'Phylum', 1: 'Kingdom'}
     if (path == None):
         print("\n\n\n-----------------------------\n Taxonomic not found\n-----------------------------\n\n\n")
@@ -142,10 +142,10 @@ def show_result(path):
 def Menu_de_cadastro():
     register = []
     register.append(
-        input('Enter the specie you wish to register:').lower().capitalize())
+        input('Enter the species you wish to register:').lower().capitalize())
     exist = search(get_id_name(name=register[-1]))
     if exist:
-        print("This specie already exist!")
+        print("This species already exist!")
         show_result(exist)
     else:
         register.append(
@@ -212,8 +212,7 @@ def home_menu():
 
     if op == "1":
         os.system('clear')
-        i = input(
-            "please type what you want to search for:\n").lower().capitalize()
+        i = input("please type the species you want to search:\n").lower().capitalize()
         result = search(get_id_name(name=i))
         show_result(result)
         input ("Press ENTER to return to the home menu")
