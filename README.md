@@ -41,12 +41,15 @@ Dessa forma, podemos saber quais nós estão ligados e fazer buscas para identif
 > $ git clone https://github.com/projeto-de-algoritmos/Grafos1_ClassificacaoBiologica
 
 - Acesse a pasta do projeto:
+
 ``` $ cd Grafos1_ClassificacaoBiologica/```
 
 -Instale o gerenciador de pacotes:
+
 ``` $ sudo apt install python3-pip```
 
-- Instale as dependências:
+-Instale as dependências:
+
 ``` $ pip3 install -r requirements.txt ```
 
 - (Opcional)
