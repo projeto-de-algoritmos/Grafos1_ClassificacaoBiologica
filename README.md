@@ -42,8 +42,10 @@ Dessa forma, podemos saber quais nós estão ligados e fazer buscas para identif
 
 - Acesse a pasta do projeto:
 ``` $ cd Grafos1_ClassificacaoBiologica/```
+
 -Instale o gerenciador de pacotes:
 ``` $ sudo apt install python3-pip```
+
 - Instale as dependências:
 ``` $ pip3 install -r requirements.txt ```
 
