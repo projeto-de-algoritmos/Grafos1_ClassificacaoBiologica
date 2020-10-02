@@ -24,13 +24,11 @@ Dessa forma, podemos saber quais nós estão ligados e fazer buscas para identif
 ## Screenshots
 
 ###### Menu inicial
-![Alt text](/media/image1.jpeg?raw=true "Menu inicial")
+![Alt text](img1.jpg?raw=true "Tela Inicial")
 ###### Aba de busca
-![Alt text](/media/image2.jpeg?raw=true "Aba de busca")
+![Alt text](img2.jpeg?raw=true "Pesquisa")
 ###### Registro de espécie existente"
-![Alt text](/media/image3.jpeg?raw=true "Registro de espécie existente") 
-###### Registro de nova espécie
-![Alt text](/media/image4.jpeg?raw=true "Registro de nova espécie")
+![Alt text](img3.jpeg?raw=true "Resultado do Menor Caminho") 
 
 ## Instalação 
 **Linguagem**: Python
